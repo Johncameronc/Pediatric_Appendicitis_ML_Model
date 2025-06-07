@@ -16,7 +16,7 @@ O principal objetivo deste projeto é criar uma ferramenta de apoio à decisão 
 - **Lógica Condicional:** O formulário adapta as perguntas com base nas respostas (ex: perguntas sobre ultrassom só aparecem se o exame foi realizado).
 - **Interface em Português:** Todas as interações com o usuário são claras e em português.
 
-## 🛠️ Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
 - **Python 3.10+**
 - **Pandas:** Para manipulação e análise de dados.
