@@ -404,3 +404,9 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+
+# ignora pasta datasets
+datasets/
+
+# ignora ambiente virtual python
+.venv/
