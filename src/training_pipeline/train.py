@@ -34,7 +34,7 @@ def treinar_modelo_individual(dados, target):
 
     # Definir os parâmetros para busca em grade
     tree_grid = {
-        'n_estimators': [100, 200,300],
+        'n_estimators': [100, 200, 300],
         'criterion': ['gini', 'entropy'],
         'max_depth': [None, 10, 20],
         'min_samples_split': [2, 5],

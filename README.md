@@ -31,7 +31,7 @@ Siga os passos abaixo para configurar o ambiente e rodar o projeto.
 
 **1. Clone o Repositório**
 ```bash
-git clone [https://github.com/seu-usuario/seu-repositorio.git](https://github.com/seu-usuario/seu-repositorio.git)
+git clone https://github.com/Johncameronc/Pediatric_Appendicitis_ML_Model.git
 cd seu-repositorio
 ```
 
