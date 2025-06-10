@@ -133,7 +133,7 @@ def inferir_paciente(paciente):
             dados_para_salvar[col] = dados_desnormalizados[col].iloc[0]
 
     # --- 1. Diagnóstico ---
-    print(f"\n{Fore.YELLOW}{Style.BRIGHT}=========== DIAGNÓSTICO DE APENDICITE ==========={Style.RESET_ALL}")
+    print(f"\n{Fore.YELLOW}{Style.BRIGHT}=========== DIAGNÓSTICO DE APENDICITE ============{Style.RESET_ALL}")
     diagnostico_proba = inferir_target(paciente, 'Diagnosis')
     if diagnostico_proba is None: return
 
@@ -148,7 +148,7 @@ def inferir_paciente(paciente):
         print(f"{Fore.GREEN}Resultado: {prob_apendicite:.2%} de chance - {dados_para_salvar['Diagnosis']}{Style.RESET_ALL}")
 
         # --- 2. Gravidade (só se o diagnóstico for positivo) ---
-        print(f"\n{Fore.YELLOW}{Style.BRIGHT}=== GRAVIDADE DA APENDICITE ==={Style.RESET_ALL}")
+        print(f"\n{Fore.YELLOW}{Style.BRIGHT}===========  GRAVIDADE DA APENDICITE  ============{Style.RESET_ALL}")
         severity_proba = inferir_target(paciente, 'Severity')
         
         if severity_proba is not None:
@@ -161,7 +161,7 @@ def inferir_paciente(paciente):
                 print(f"{Fore.GREEN}Resultado: {(1 - prob_complicada):.2%} de chance - {dados_para_salvar['Severity']}{Style.RESET_ALL}")
 
         # --- 3. Tratamento (só se o diagnóstico for positivo) ---
-        print(f"\n{Fore.YELLOW}{Style.BRIGHT}=== TRATAMENTO RECOMENDADO ==={Style.RESET_ALL}")
+        print(f"\n{Fore.YELLOW}{Style.BRIGHT}===========  TRATAMENTO RECOMENDADO   ============{Style.RESET_ALL}")
         management_proba = inferir_target(paciente, 'Management')
         
         if management_proba is not None:
@@ -179,4 +179,4 @@ def inferir_paciente(paciente):
 
     # --- Salvamento dos dados ---
     salvar_inferencia_csv(dados_para_salvar)
-    print(f"\n{Fore.CYAN}--- Inferência salva em '{CSV_PATH.name}' ---{Style.RESET_ALL}")
+    print(f"\n{Fore.CYAN}- Inferência salva em '{CSV_PATH.name}'  -{Style.RESET_ALL}")

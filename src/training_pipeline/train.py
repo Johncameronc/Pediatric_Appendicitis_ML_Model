@@ -56,6 +56,13 @@ def treinar_modelo_individual(dados, target):
     scores_cross = cross_validate(tree, dados_atributos, dados_classes, cv=10, scoring=scoring_metrics)
 
     print(f'> Modelo treinado com sucesso para a coluna {target}!')
+    
+    from sklearn.metrics import classification_report
+    print('========================= RESULTADOS =========================') 
+    # print(f'> {classification_report(dados_classes, tree.predict(dados_atributos))}') 
+    print(f'> Acurácia: {round(scores_cross["test_accuracy"].mean(), 3):<10} \t| Precisão: {round(scores_cross["test_precision_macro"].mean(), 3):<10}')
+    print(f'> Recall: {round(scores_cross["test_recall_macro"].mean(), 3):<10} \t| F1: {round(scores_cross["test_f1_macro"].mean(), 3):<10}')
+    print('='*62)
 
     tree = tree.fit(dados_atributos, dados_classes)
 
@@ -87,3 +94,4 @@ def executar_pipeline_de_treinamento():
     treinar_modelo_individual(management_df, 'Management')
     
     print("> Pipeline de treinamento concluído com sucesso!")
+    input("Pressione ENTER para continuar...")

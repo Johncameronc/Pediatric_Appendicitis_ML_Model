@@ -59,4 +59,5 @@ def preprocessar_dados(dados):
         preencher_moda(dados, coluna)
 
     print("> Pré-processamento concluído.")
+    input("Pressione ENTER para continuar...")
     return dados
